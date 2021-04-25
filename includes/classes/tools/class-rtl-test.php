@@ -5,13 +5,13 @@
  * Adds a button to the admin bar that allow super admins
  * to switch the text direction of the site.
  *
- * @package    Site_Core
+ * @package    KC_Network
  * @subpackage Classes
  * @category   Tools
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Tools;
+namespace KC_Network\Classes\Tools;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -105,7 +105,7 @@ class RTL_Test {
 		$wp_admin_bar->add_menu(
 			[
 				'id'    => 'RTL',
-		 		'title' => sprintf( __( 'Switch to %s', 'sitecore' ), strtoupper( $direction ) ),
+		 		'title' => sprintf( __( 'Switch to %s', 'kc-network' ), strtoupper( $direction ) ),
 		 		'href'  => add_query_arg( [ 'd' => $direction ] )
 			]
 		);

@@ -2,16 +2,16 @@
 /**
  * Settings class
  *
- * @package    Site_Core
+ * @package    KC_Network
  * @subpackage Classes
  * @category   Settings
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Settings;
+namespace KC_Network\Classes\Settings;
 use
-SiteCore\Classes as Classes,
-SiteCore\Classes\Admin as Admin;
+KC_Network\Classes as Classes,
+KC_Network\Classes\Admin as Admin;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -19,10 +19,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Define forms directory.
-if ( ! defined( 'SCP_FORMS' ) ) {
-	define( 'SCP_FORMS', [
-		'forms'    => SCP_PATH . 'views/backend/forms/',
-		'partials' => SCP_PATH . 'views/backend/forms/partials'
+if ( ! defined( 'KCN_FORMS' ) ) {
+	define( 'KCN_FORMS', [
+		'forms'    => KCN_PATH . 'views/backend/forms/',
+		'partials' => KCN_PATH . 'views/backend/forms/partials'
 	] );
 }
 
@@ -77,14 +77,14 @@ class Settings {
 
 		$defaults = [
 			'id'            => null,
-			'id_before'     => 'scp_',
+			'id_before'     => 'kcn_',
 			'id_after'      => null,
 			'capability'    => 'read',
 			'section'       => null,
 			'label'         => null,
 			'label_before'  => null,
 			'label_after'   => null,
-			'class'         => 'scp-setting',
+			'class'         => 'kcn-setting',
 			'icon'          => null,
 			'description'   => null,
 			'hide-if-no-js' => false,
@@ -122,7 +122,7 @@ function get_settings() {
 	 * This includes main directory (`/`) and any
 	 * subdirectories (`* /`).
 	 */
-	$dir_file = SCP_PATH .  'includes/settings' . "{/,/*/}" . 'settings-*.php';
+	$dir_file = KCN_PATH .  'includes/settings' . "{/,/*/}" . 'settings-*.php';
 
 	// Include each file matching the path patterns.
 	foreach ( glob( $dir_file, GLOB_BRACE ) as $settings_file ) {

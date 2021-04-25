@@ -2,7 +2,7 @@
 /**
  * Output of the sample page content
  *
- * @package    Site_Core
+ * @package    KC_Network
  * @subpackage Views
  * @category   Admin
  * @since      1.0.0

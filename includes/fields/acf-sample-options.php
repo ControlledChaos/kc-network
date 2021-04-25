@@ -23,14 +23,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 acf_add_local_field_group( [
 	'key'    => 'group_6036c0197044c',
-	'title'  => __( 'Sample Options Page', 'sitecore' ),
+	'title'  => __( 'Sample Options Page', 'kc-network' ),
 	'fields' => [
 		[
 			'key'               => 'field_6036c02cad870',
-			'label'             => __( 'Sample Options Page Field', 'sitecore' ),
+			'label'             => __( 'Sample Options Page Field', 'kc-network' ),
 			'name'              => 'sample_options_page_field',
 			'type'              => 'text',
-			'instructions'      => __( 'Sample instructions.', 'sitecore' ),
+			'instructions'      => __( 'Sample instructions.', 'kc-network' ),
 			'required'          => 0,
 			'conditional_logic' => 0,
 			'wrapper'           => [
@@ -49,9 +49,9 @@ acf_add_local_field_group( [
 				5 => 'test_tax_one',
 			],
 			'default_value' => '',
-			'placeholder'   => __( 'Just a text field.', 'sitecore' ),
-			'prepend'       => __( '', 'sitecore' ),
-			'append'        => __( '', 'sitecore' ),
+			'placeholder'   => __( 'Just a text field.', 'kc-network' ),
+			'prepend'       => __( '', 'kc-network' ),
+			'append'        => __( '', 'kc-network' ),
 			'maxlength'     => '',
 			'acfe_field_group_condition' => 0,
 		],
@@ -72,7 +72,7 @@ acf_add_local_field_group( [
 	'instruction_placement' => 'field',
 	'hide_on_screen'        => '',
 	'active'                => true,
-	'description'           => __( 'Field group provided as a sample for the sample options page.', 'sitecore' ),
+	'description'           => __( 'Field group provided as a sample for the sample options page.', 'kc-network' ),
 	'acfe_autosync'         => [
 		0 => 'json',
 	],

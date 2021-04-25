@@ -2,14 +2,14 @@
 /**
  * Tools class
  *
- * @package    Site_Core
+ * @package    KC_Network
  * @subpackage Classes
  * @category   Tools
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Tools;
-use SiteCore\Classes as Classes;
+namespace KC_Network\Classes\Tools;
+use KC_Network\Classes as Classes;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

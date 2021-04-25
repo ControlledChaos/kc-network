@@ -2,13 +2,13 @@
 /**
  * Sample plugin compatability
  *
- * @package    Site_Core
+ * @package    KC_Network
  * @subpackage Classes
  * @category   Vendor
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Vendor;
+namespace KC_Network\Classes\Vendor;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -93,7 +93,7 @@ class Sample_Plugin extends Plugin {
 	public function use_bundled() {
 
 		// Override constant.
-		if ( defined( 'SCP_USE_SAMPLE_PLUGIN' ) && false == SCP_USE_SAMPLE_PLUGIN ) {
+		if ( defined( 'KCN_USE_SAMPLE_PLUGIN' ) && false == KCN_USE_SAMPLE_PLUGIN ) {
 			return false;
 		}
 		return true;

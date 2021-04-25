@@ -2,25 +2,25 @@
 /**
  * Initialize plugin functionality
  *
- * @package    Site_Core
+ * @package    KC_Network
  * @subpackage Init
  * @category   Core
  * @since      1.0.0
  */
 
-namespace SiteCore;
+namespace KC_Network;
 
 // Alias namespaces.
 use
-SiteCore\Classes          as Classes,
-SiteCore\Classes\Core     as Core,
-SiteCore\Classes\Settings as Settings,
-SiteCore\Classes\Tools    as Tools,
-SiteCore\Classes\Media    as Media,
-SiteCore\Classes\Users    as Users,
-SiteCore\Classes\Admin    as Admin,
-SiteCore\Classes\Front    as Front,
-SiteCore\Classes\Vendor   as Vendor;
+KC_Network\Classes          as Classes,
+KC_Network\Classes\Core     as Core,
+KC_Network\Classes\Settings as Settings,
+KC_Network\Classes\Tools    as Tools,
+KC_Network\Classes\Media    as Media,
+KC_Network\Classes\Users    as Users,
+KC_Network\Classes\Admin    as Admin,
+KC_Network\Classes\Front    as Front,
+KC_Network\Classes\Vendor   as Vendor;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -42,15 +42,15 @@ function init() {
 
 	// Standard plugin installation.
 	load_plugin_textdomain(
-		'sitecore',
+		'kc-network',
 		false,
-		dirname( SCP_BASENAME ) . '/languages'
+		dirname( KCN_BASENAME ) . '/languages'
 	);
 
 	// If this is in the must-use plugins directory.
 	load_muplugin_textdomain(
-		'sitecore',
-		dirname( SCP_BASENAME ) . '/languages'
+		'kc-network',
+		dirname( KCN_BASENAME ) . '/languages'
 	);
 
 	/**
@@ -59,10 +59,10 @@ function init() {
 	 * The autoloader registers plugin classes for later use,
 	 * such as running new instances below.
 	 */
-	require_once SCP_PATH . 'includes/autoloader.php';
+	require_once KCN_PATH . 'includes/autoloader.php';
 
 	// Get compatibility functions.
-	require SCP_PATH . 'includes/vendor/compatibility.php';
+	require KCN_PATH . 'includes/vendor/compatibility.php';
 
 	// Instantiate settings classes.
 	new Settings\Settings;
@@ -76,7 +76,7 @@ function init() {
 	new Core\Register_Site_Help;
 
 	// If the Customizer is disabled in the system config file.
-	if ( ( defined( 'SCP_ALLOW_CUSTOMIZER' ) && false == SCP_ALLOW_CUSTOMIZER ) && ! current_user_can( 'develop' ) ) {
+	if ( ( defined( 'KCN_ALLOW_CUSTOMIZER' ) && false == KCN_ALLOW_CUSTOMIZER ) && ! current_user_can( 'develop' ) ) {
 		new Core\Remove_Customizer;
 	}
 
@@ -125,7 +125,7 @@ function init() {
 	add_filter( 'admin_email_check_interval', '__return_false' );
 
 	// Disable Site Health notifications.
-	if ( defined( 'SCP_ALLOW_SITE_HEALTH' ) && ! SCP_ALLOW_SITE_HEALTH ) {
+	if ( defined( 'KCN_ALLOW_SITE_HEALTH' ) && ! KCN_ALLOW_SITE_HEALTH ) {
 		add_filter( 'wp_fatal_error_handler_enabled', '__return_false' );
 	}
 
@@ -134,7 +134,7 @@ function init() {
 	 *
 	 * @todo Put into an option.
 	 */
-	if ( defined( 'SCP_ALLOW_LINKS_MANAGER' ) && SCP_ALLOW_LINKS_MANAGER ) {
+	if ( defined( 'KCN_ALLOW_LINKS_MANAGER' ) && KCN_ALLOW_LINKS_MANAGER ) {
 		add_filter( 'pre_option_link_manager_enabled', '__return_true' );
 	}
 
@@ -159,7 +159,7 @@ function init() {
 
 	// System email filters.
 	add_filter( 'wp_mail_from_name', function( $name ) {
-		return apply_filters( 'scp_mail_from_name', get_bloginfo( 'name' ) );
+		return apply_filters( 'kcn_mail_from_name', get_bloginfo( 'name' ) );
 	} );
 }
 

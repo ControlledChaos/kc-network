@@ -4,7 +4,7 @@
  *
  * "Enhancement Suite which improves Advanced Custom Fields administration."
  *
- * @package    Site_Core
+ * @package    KC_Network
  * @subpackage Vendor
  * @category   Plugins
  * @version    x.x.x

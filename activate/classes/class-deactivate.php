@@ -2,13 +2,13 @@
 /**
  * Plugin deactivation class
  *
- * @package    Site_Core
+ * @package    KC_Network
  * @subpackage Classes
  * @category   Activate
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Activate;
+namespace KC_Network\Classes\Activate;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

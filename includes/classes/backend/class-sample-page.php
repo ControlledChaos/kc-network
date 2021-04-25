@@ -6,14 +6,14 @@
  * its new class name. Add to the autoloader
  * and intantiate where appropriate.
  *
- * @package    Site_Core
+ * @package    KC_Network
  * @subpackage Classes
  * @category   Admin
  * @since      1.0.0
  */
 
 declare( strict_types = 1 );
-namespace SiteCore\Classes\Admin;
+namespace KC_Network\Classes\Admin;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -63,7 +63,7 @@ class Sample_Page extends Add_Page {
 	 *                dashes, and underscores characters to be
 	 *                compatible with sanitize_key().
 	 */
-	protected $menu_slug = SCP_BASENAME . '-sample-page';
+	protected $menu_slug = KCN_BASENAME . '-sample-page';
 
 	/**
 	 * Menu icon
@@ -136,16 +136,16 @@ class Sample_Page extends Add_Page {
 
 		$this->add_content_tab( [
 			'id'         => 'sample-one',
-			'tab'        => __( 'One', 'sitecore' ),
-			'heading'    => __( 'Settings One', 'sitecore' ),
+			'tab'        => __( 'One', 'kc-network' ),
+			'heading'    => __( 'Settings One', 'kc-network' ),
 			'content'    => '',
 			'callback'   => [ $this, 'sample_tab' ]
 		] );
 
 		$this->add_content_tab( [
 			'id'         => 'sample-two',
-			'tab'        => __( 'Two', 'sitecore' ),
-			'heading'    => __( 'Settings Two', 'sitecore' ),
+			'tab'        => __( 'Two', 'kc-network' ),
+			'heading'    => __( 'Settings Two', 'kc-network' ),
 			'content'    => '',
 			'callback'   => [ $this, 'sample_tab' ]
 		] );
@@ -159,6 +159,6 @@ class Sample_Page extends Add_Page {
 	 * @return mixed Returns the tab content.
 	 */
 	public function sample_tab() {
-		include SCP_PATH . 'views/backend/pages/sample-page-content.php';
+		include KCN_PATH . 'views/backend/pages/sample-page-content.php';
 	}
 }

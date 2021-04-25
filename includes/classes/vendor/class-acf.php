@@ -2,13 +2,13 @@
 /**
  * Advanced Custom Fields compatability
  *
- * @package    Site_Core
+ * @package    KC_Network
  * @subpackage Classes
  * @category   Vendor
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Vendor;
+namespace KC_Network\Classes\Vendor;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -114,7 +114,7 @@ class ACF extends Plugin {
 	public function use_bundled() {
 
 		// Override constant.
-		if ( defined( 'SCP_USE_BUNDLED_ACF' ) && false == SCP_USE_BUNDLED_ACF ) {
+		if ( defined( 'KCN_USE_BUNDLED_ACF' ) && false == KCN_USE_BUNDLED_ACF ) {
 			return false;
 		}
 		return true;
@@ -129,7 +129,7 @@ class ACF extends Plugin {
 	 * @return string Returns the URL for ACF files.
 	 */
 	public function acf_settings_url( $url ) {
-		$url = SCP_URL . 'includes/vendor/' . $this->bundled_dir . '/';
+		$url = KCN_URL . 'includes/vendor/' . $this->bundled_dir . '/';
 		return $url;
 	}
 
@@ -154,7 +154,7 @@ class ACF extends Plugin {
 	 * @return string Returns the directory path.
 	 */
 	public function save_acf_json( $path ) {
-		$path = SCP_PATH . 'includes/settings/acf-json';
+		$path = KCN_PATH . 'includes/settings/acf-json';
 		return $path;
 	}
 
@@ -168,7 +168,7 @@ class ACF extends Plugin {
 	 */
 	public function load_acf_json( $paths ) {
 		unset( $paths[0] );
-		$paths[] = SCP_PATH . 'includes/settings/acf-json';
+		$paths[] = KCN_PATH . 'includes/settings/acf-json';
 		return $paths;
 	}
 

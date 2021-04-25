@@ -7,13 +7,13 @@
  * Content is from the default rich text
  * editor or block editor in WordPress 5.0+.
  *
- * @package    Site_Core
+ * @package    KC_Network
  * @subpackage Classes
  * @category   Front
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Front;
+namespace KC_Network\Classes\Front;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

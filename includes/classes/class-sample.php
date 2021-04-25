@@ -4,13 +4,13 @@
  *
  * @see `includes/classes/README.md`;
  *
- * @package    Site_Core
+ * @package    KC_Network
  * @subpackage Classes
  * @category   General
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes;
+namespace KC_Network\Classes;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -18,6 +18,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class Sample extends Base {
+
+	/**
+	 * The class object
+	 *
+	 * @since  1.0.0
+	 * @access protected
+	 * @var    string
+	 */
+	protected static $class_object;
 
 	/**
 	 * Sample string
@@ -71,24 +80,18 @@ class Sample extends Base {
 	 * This method can be used to call an instance
 	 * of the class from outside the class.
 	 *
-	 * Delete this method if not needed.
-	 *
 	 * @since  1.0.0
 	 * @access public
 	 * @return object Returns an instance of the class.
 	 */
 	public static function instance() {
 
-		// Varialbe for the instance of the class.
-		static $sample_instance = null;
-
-		// Set variable for new instance.
-		if ( is_null( $sample_instance ) ) {
-			$sample_instance = new self;
+		if ( is_null( self :: $class_object ) ) {
+			self :: $class_object = new self();
 		}
 
 		// Return the instance.
-		return $sample_instance;
+		return self :: $class_object;
 	}
 
 	/**
@@ -127,13 +130,13 @@ class Sample extends Base {
  * Delete this function if not needed.
  *
  * @example Call a method from the namespaced class:
- *          `Classes\scp_sample_class()->sample_method();`
+ *          `Classes\kcn_sample_class()->sample_method();`
  *
  * @since  1.0.0
  * @access public
  * @return object Returns an instance of the class.
  */
-function scp_sample_class() {
+function kcn_sample_class() {
 	return Sample :: instance();
 }
 
@@ -142,4 +145,4 @@ function scp_sample_class() {
  *
  * Uncomment to use.
  */
-// scp_sample_class();
+// kcn_sample_class();

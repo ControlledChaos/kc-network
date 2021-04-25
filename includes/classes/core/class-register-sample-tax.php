@@ -6,14 +6,14 @@
  * its new class name. Add to the autoloader
  * and intantiate where appropriate.
  *
- * @package    Site_Core
+ * @package    KC_Network
  * @subpackage Classes
  * @category   Core
  * @since      1.0.0
  */
 
 declare( strict_types = 1 );
-namespace SiteCore\Classes\Core;
+namespace KC_Network\Classes\Core;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

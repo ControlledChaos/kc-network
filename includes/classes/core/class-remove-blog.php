@@ -2,13 +2,13 @@
 /**
  * Remove blog
  *
- * @package    Site_Core
+ * @package    KC_Network
  * @subpackage Classes
  * @category   Core
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Core;
+namespace KC_Network\Classes\Core;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -114,7 +114,7 @@ class Remove_Blog {
 		] );
 
 		// Get the option to trash or delete.
-		$force = get_option( 'scp_force_delete_posts' );
+		$force = get_option( 'kcn_force_delete_posts' );
 
 		foreach ( $posts as $post ) {
 			// wp_delete_post( $post->ID, $force );

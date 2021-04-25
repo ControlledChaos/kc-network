@@ -2,17 +2,17 @@
 /**
  * Register ACF options page
  *
- * @package    Site_Core
+ * @package    KC_Network
  * @subpackage Classes
  * @category   Vendor
  * @since      1.0.0
  */
 
 declare( strict_types = 1 );
-namespace SiteCore\Classes\Vendor;
+namespace KC_Network\Classes\Vendor;
 
 // Alias namespaces.
-use SiteCore\Classes\Admin as Admin;
+use KC_Network\Classes\Admin as Admin;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

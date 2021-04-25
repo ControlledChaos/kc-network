@@ -2,13 +2,13 @@
 /**
  * User colors class
  *
- * @package    Site_Core
+ * @package    KC_Network
  * @subpackage Classes
  * @category   Admin
  * @since      1.0.0
  */
 
-namespace Site_Core\Classes\Admin;
+namespace KC_Network\Classes\Admin;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,6 +16,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class User_Colors {
+
+	/**
+	 * The class object
+	 *
+	 * @since  1.0.0
+	 * @access protected
+	 * @var    string
+	 */
+	protected static $class_object;
 
 	/**
 	 * Instance of the class
@@ -28,7 +37,13 @@ class User_Colors {
 	 * @return object Returns an instance of the class.
 	 */
 	public static function instance() {
-		return new self;
+
+		if ( is_null( self :: $class_object ) ) {
+			self :: $class_object = new self();
+		}
+
+		// Return the instance.
+		return self :: $class_object;
 	}
 
 	/**

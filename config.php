@@ -11,16 +11,16 @@
  * in a settings file is to prevent site administrators wrongly
  * or incorrectly configuring the site built by developers.
  *
- * @package    Site_Core
+ * @package    KC_Network
  * @subpackage Configuration
  * @category   Core
  * @since      1.0.0
  */
 
-namespace SiteCore;
+namespace KC_Network;
 
 // Alias namespaces.
-use SiteCore\Classes as Classes;
+use KC_Network\Classes as Classes;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -30,15 +30,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Constant: Plugin version
  *
- * Keeping the version at 1.0.0 as this is a starter plugin but
- * you may want to start counting as you develop for your use case.
- *
- * Remember to find and replace the `@version x.x.x` in docblocks.
- *
  * @since 1.0.0
  * @var   string The latest plugin version.
  */
-define( 'SCP_VERSION', '1.0.0' );
+define( 'KCN_VERSION', '1.0.0' );
 
 /**
  * Plugin name
@@ -46,8 +41,8 @@ define( 'SCP_VERSION', '1.0.0' );
  * @since 1.0.0
  * @var   string The name of the plugin.
  */
-if ( ! defined( 'SCP_NAME' ) ) {
-	define( 'SCP_NAME', __( 'Site Core', 'sitecore' ) );
+if ( ! defined( 'KCN_NAME' ) ) {
+	define( 'KCN_NAME', __( 'Kaweah Confluence Network', 'kc-network' ) );
 }
 
 /**
@@ -57,7 +52,7 @@ if ( ! defined( 'SCP_NAME' ) ) {
  * @var   string The filesystem directory path (with trailing slash)
  *               for the plugin __FILE__ passed in.
  */
-define( 'SCP_PATH', plugin_dir_path( __FILE__ ) );
+define( 'KCN_PATH', plugin_dir_path( __FILE__ ) );
 
 /**
  * Constant: Plugin folder URL
@@ -66,7 +61,7 @@ define( 'SCP_PATH', plugin_dir_path( __FILE__ ) );
  * @var   string The URL directory path (with trailing slash)
  *               for the plugin __FILE__ passed in.
  */
-define( 'SCP_URL', plugin_dir_url(__FILE__ ) );
+define( 'KCN_URL', plugin_dir_url(__FILE__ ) );
 
 /**
  * PHP version check
@@ -88,9 +83,9 @@ if ( ! Classes\php()->version() ) {
  * @since 1.0.0
  * @var   array Plugin identification, support, settintgs.
  */
-if ( ! defined( 'SCP_CONFIG' ) ) {
+if ( ! defined( 'KCN_CONFIG' ) ) {
 
-	define( 'SCP_CONFIG', [
+	define( 'KCN_CONFIG', [
 
 		/**
 		 * Plugin version
@@ -98,7 +93,7 @@ if ( ! defined( 'SCP_CONFIG' ) ) {
 		 * @since 1.0.0
 		 * @var   string The latest plugin version.
 		 */
-		'version' => SCP_VERSION,
+		'version' => KCN_VERSION,
 
 		/**
 		 * Required PHP version
@@ -116,7 +111,7 @@ if ( ! defined( 'SCP_CONFIG' ) ) {
 		 * @since 1.0.0
 		 * @var   string The name of the plugin.
 		 */
-		'name' => SCP_NAME,
+		'name' => KCN_NAME,
 
 		/**
 		 * Developer name
@@ -124,7 +119,7 @@ if ( ! defined( 'SCP_CONFIG' ) ) {
 		 * @since 1.0.0
 		 * @var   string The name of the developer/agency.
 		 */
-		'dev_name' => __( 'Controlled Chaos', 'sitecore' ),
+		'dev_name' => __( 'Controlled Chaos', 'kc-network' ),
 
 		/**
 		 * Developer URL
@@ -148,7 +143,7 @@ if ( ! defined( 'SCP_CONFIG' ) ) {
 		 * @since 1.0.0
 		 * @var   string The URL of the plugin.
 		 */
-		'plugin_url' => esc_url( 'https://github.com/ControlledChaos/sitecore' ),
+		'plugin_url' => esc_url( 'https://github.com/ControlledChaos/kc-network' ),
 
 		/**
 		 * Universal slug
@@ -156,13 +151,13 @@ if ( ! defined( 'SCP_CONFIG' ) ) {
 		 * This URL slug is used for various plugin admin & settings pages.
 		 *
 		 * The prefix will change in your search & replace in renaming the plugin.
-		 * Change the second part of the define(), here as 'site-core',
+		 * Change the second part of the define(), here as 'kc-network',
 		 * to your preferred page slug.
 		 *
 		 * @since 1.0.0
 		 * @var   string The URL slug of the admin pages.
 		 */
-		'admin_slug' => 'site-core',
+		'admin_slug' => 'kc-network',
 
 		/**
 		 * Allow Site Health
@@ -204,8 +199,8 @@ if ( ! defined( 'SCP_CONFIG' ) ) {
  * @since 1.0.0
  * @var   string The name of the developer/agency.
  */
-if ( ! defined( 'SCP_DEV_NAME' ) ) {
-	define( 'SCP_DEV_NAME', SCP_CONFIG['dev_name'] );
+if ( ! defined( 'KCN_DEV_NAME' ) ) {
+	define( 'KCN_DEV_NAME', KCN_CONFIG['dev_name'] );
 }
 
 /**
@@ -214,8 +209,8 @@ if ( ! defined( 'SCP_DEV_NAME' ) ) {
  * @since 1.0.0
  * @var   string The URL of the developer/agency.
  */
-if ( ! defined( 'SCP_DEV_URL' ) ) {
-	define( 'SCP_DEV_URL', SCP_CONFIG['dev_url'] );
+if ( ! defined( 'KCN_DEV_URL' ) ) {
+	define( 'KCN_DEV_URL', KCN_CONFIG['dev_url'] );
 }
 
 /**
@@ -224,8 +219,8 @@ if ( ! defined( 'SCP_DEV_URL' ) ) {
  * @since 1.0.0
  * @var   string The URL of the developer/agency.
  */
-if ( ! defined( 'SCP_DEV_EMAIL' ) ) {
-	define( 'SCP_DEV_EMAIL', SCP_CONFIG['dev_email'] );
+if ( ! defined( 'KCN_DEV_EMAIL' ) ) {
+	define( 'KCN_DEV_EMAIL', KCN_CONFIG['dev_email'] );
 }
 
 /**
@@ -234,8 +229,8 @@ if ( ! defined( 'SCP_DEV_EMAIL' ) ) {
  * @since 1.0.0
  * @var   string The URL of the plugin.
  */
-if ( ! defined( 'SCP_PLUGIN_URL' ) ) {
-	define( 'SCP_PLUGIN_URL', SCP_CONFIG['plugin_url'] );
+if ( ! defined( 'KCN_PLUGIN_URL' ) ) {
+	define( 'KCN_PLUGIN_URL', KCN_CONFIG['plugin_url'] );
 }
 
 /**
@@ -244,8 +239,8 @@ if ( ! defined( 'SCP_PLUGIN_URL' ) ) {
  * @since 1.0.0
  * @var   boolean Whether to allow the Site Health feature.
  */
-if ( ! defined( 'SCP_ALLOW_SITE_HEALTH' ) ) {
-	define( 'SCP_ALLOW_SITE_HEALTH', SCP_CONFIG['site_health'] );
+if ( ! defined( 'KCN_ALLOW_SITE_HEALTH' ) ) {
+	define( 'KCN_ALLOW_SITE_HEALTH', KCN_CONFIG['site_health'] );
 }
 
 /**
@@ -254,8 +249,8 @@ if ( ! defined( 'SCP_ALLOW_SITE_HEALTH' ) ) {
  * @since 1.0.0
  * @var   boolean Whether to allow the links manager feature.
  */
-if ( ! defined( 'SCP_ALLOW_LINKS_MANAGER' ) ) {
-	define( 'SCP_ALLOW_LINKS_MANAGER', SCP_CONFIG['links_manager'] );
+if ( ! defined( 'KCN_ALLOW_LINKS_MANAGER' ) ) {
+	define( 'KCN_ALLOW_LINKS_MANAGER', KCN_CONFIG['links_manager'] );
 }
 
 /**
@@ -264,8 +259,8 @@ if ( ! defined( 'SCP_ALLOW_LINKS_MANAGER' ) ) {
  * @since 1.0.0
  * @var   boolean Whether to allow the Customizer.
  */
-if ( ! defined( 'SCP_ALLOW_CUSTOMIZER' ) ) {
-	define( 'SCP_ALLOW_CUSTOMIZER', SCP_CONFIG['customizer'] );
+if ( ! defined( 'KCN_ALLOW_CUSTOMIZER' ) ) {
+	define( 'KCN_ALLOW_CUSTOMIZER', KCN_CONFIG['customizer'] );
 }
 
 /**
@@ -274,6 +269,6 @@ if ( ! defined( 'SCP_ALLOW_CUSTOMIZER' ) ) {
  * @since 1.0.0
  * @var   boolean Whether to allow admin color pickers.
  */
-if ( ! defined( 'SCP_ALLOW_ADMIN_COLOR_PICKER' ) ) {
-	define( 'SCP_ALLOW_ADMIN_COLOR_PICKER', SCP_CONFIG['color_picker'] );
+if ( ! defined( 'KCN_ALLOW_ADMIN_COLOR_PICKER' ) ) {
+	define( 'KCN_ALLOW_ADMIN_COLOR_PICKER', KCN_CONFIG['color_picker'] );
 }

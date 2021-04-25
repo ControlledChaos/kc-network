@@ -2,17 +2,17 @@
 /**
  * Register media type taxonomy
  *
- * @package    Site_Core
+ * @package    KC_Network
  * @subpackage Classes
  * @category   Media
  * @since      1.0.0
  */
 
 declare( strict_types = 1 );
-namespace SiteCore\Classes\Media;
+namespace KC_Network\Classes\Media;
 
 // Alias namespaces.
-use SiteCore\Classes\Core as Core;
+use KC_Network\Classes\Core as Core;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

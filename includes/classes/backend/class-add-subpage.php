@@ -2,14 +2,14 @@
 /**
  * Add subpage class
  *
- * @package    Site_Core
+ * @package    KC_Network
  * @subpackage Classes
  * @category   Admin
  * @since      1.0.0
  */
 
 declare( strict_types = 1 );
-namespace SiteCore\Classes\Admin;
+namespace KC_Network\Classes\Admin;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

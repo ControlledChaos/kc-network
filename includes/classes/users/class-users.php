@@ -2,14 +2,14 @@
 /**
  * Users class
  *
- * @package    Site_Core
+ * @package    KC_Network
  * @subpackage Classes
  * @category   Users
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Users;
-use SiteCore\Classes as Classes;
+namespace KC_Network\Classes\Users;
+use KC_Network\Classes as Classes;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -65,6 +65,9 @@ class Users extends Classes\Base {
 		add_filter( 'get_the_author_description', 'wptexturize' );
 		add_filter( 'get_the_author_description', 'convert_chars' );
 		add_filter( 'get_the_author_description', 'wpautop' );
+
+		// Remove theme styles from bio editor.
+		add_action( 'init', [ $this, 'remove_editor_styles' ] );
 	}
 
 	/**
@@ -254,5 +257,32 @@ class Users extends Classes\Base {
 	 */
 	public function editor_filters() {
 		remove_all_filters( 'pre_user_description' );
+	}
+
+	/**
+	 * Remove theme styles from bio editor
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @global $pagenow Access the current screen file.
+	 * @return mixed Return the `remove_editor_styles()`
+	 *               function if on the user profile page.
+	 */
+	public function remove_editor_styles() {
+
+		// Stop if not in admin.
+		if ( ! is_admin() ) {
+			return;
+		}
+
+		// Access the current screen file.
+		global $pagenow;
+
+		// Remove only on the profile page.
+		$remove = null;
+		if ( $pagenow == 'profile.php' ) {
+			$remove = remove_editor_styles();
+		}
+		return $remove;
 	}
 }

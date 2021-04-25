@@ -1,10 +1,10 @@
 <?php
 /**
- * Site Core plugin
+ * Kaweah Confluence Network plugin
  *
  * Develop site-specific plugins for ClassicPress, WordPress, and the antibrand system.
  *
- * @package    Site_More
+ * @package    KC_Network
  * @subpackage Init
  * @category   Core
  * @since      1.0.0

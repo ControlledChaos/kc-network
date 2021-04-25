@@ -2,15 +2,15 @@
 /**
  * Content settings class
  *
- * @package    Site_Core
+ * @package    KC_Network
  * @subpackage Classes
  * @category   Admin
  * @since      1.0.0
  */
 
 declare( strict_types = 1 );
-namespace SiteCore\Classes\Admin;
-use SiteCore\Classes\Settings as Settings;
+namespace KC_Network\Classes\Admin;
+use KC_Network\Classes\Settings as Settings;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -121,9 +121,9 @@ class Content_Settings extends Add_Settings_Page {
 
 		$this->add_content_tab( [
 			'id'         => 'content-settings-intro',
-			'tab'        => __( 'Intro', 'sitecore' ),
-			'heading'    => __( 'Introduction', 'sitecore' ),
-			'content'    => __( 'In development', 'sitecore' ),
+			'tab'        => __( 'Intro', 'kc-network' ),
+			'heading'    => __( 'Introduction', 'kc-network' ),
+			'content'    => __( 'In development', 'kc-network' ),
 			'callback'   => ''
 		] );
 	}
@@ -136,6 +136,6 @@ class Content_Settings extends Add_Settings_Page {
 	 * @return string Returns the page heading.
 	 */
 	protected function heading() {
-		return __( 'Content Settings', 'sitecore' );
+		return __( 'Content Settings', 'kc-network' );
 	}
 }

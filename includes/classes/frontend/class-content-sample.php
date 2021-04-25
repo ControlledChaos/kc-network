@@ -2,13 +2,13 @@
 /**
  * Sample post content filter
  *
- * @package    Site_Core
+ * @package    KC_Network
  * @subpackage Classes
  * @category   Front
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Front;
+namespace KC_Network\Classes\Front;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -128,7 +128,7 @@ class Content_Sample extends Content_Filter {
 
 		// Use the plugin template if no theme template is found.
 		} else {
-			include SCP_PATH . '/views/frontend/archive-sample.php';
+			include KCN_PATH . '/views/frontend/archive-sample.php';
 		}
 	}
 
@@ -154,7 +154,7 @@ class Content_Sample extends Content_Filter {
 
 		// Use the plugin template if no theme template is found.
 		} else {
-			include SCP_PATH . '/views/frontend/single-sample.php';
+			include KCN_PATH . '/views/frontend/single-sample.php';
 		}
 	}
 
@@ -180,7 +180,7 @@ class Content_Sample extends Content_Filter {
 
 		// Use the plugin template if no theme template is found.
 		} else {
-			include SCP_PATH . '/views/frontend/taxonomy-sample.php';
+			include KCN_PATH . '/views/frontend/taxonomy-sample.php';
 		}
 	}
 }
